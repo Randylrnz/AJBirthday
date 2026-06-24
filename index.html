@@ -398,31 +398,31 @@ body{
   .nav-l{left:-52px;}.nav-r{right:-52px;}
 }
 
-/* ── MOBILE: single-page view below 700px ── */
+/* ── MOBILE: book-card view below 700px ── */
 @media(max-width:700px){
   :root{
-    --bw: 100vw;
+    --bw: calc(100vw - 28px);
     --bh: auto;
-    --pw: 100vw;
+    --pw: calc(100vw - 28px);
   }
-  body{overflow-y:auto;justify-content:flex-start;padding:0 0 80px;}
-  .scene{padding:0;width:100vw;}
-  .book{width:100vw;height:auto;}
+  body{overflow-y:auto;justify-content:flex-start;padding:18px 0 90px;}
+  .scene{padding:0 14px;width:100%;}
+  .book{width:100%;height:auto;}
   /* Hide left page — mobile shows single page only */
   .pg-l{display:none !important;}
-  /* Right page becomes full-width single page */
+  /* Right page becomes a contained book card */
   .pg-r{
     position:relative !important;
     left:0 !important;
-    width:100vw !important;
+    width:100% !important;
     height:auto !important;
-    min-height:100svh;
-    border-radius:0 !important;
-    border:none !important;
-    box-shadow:none !important;
+    min-height:unset;
+    border-radius:10px !important;
+    border:1px solid rgba(200,148,42,.35) !important;
+    box-shadow:0 12px 40px rgba(45,18,48,.45),0 2px 8px rgba(45,18,48,.2) !important;
     overflow:hidden !important;
   }
-  .f-side{border-radius:0 !important;}
+  .f-side{border-radius:10px !important;}
   /* Disable 3D flip visuals on mobile */
   .flipper{display:none !important;}
   .spine,.book::before,.book::after{display:none;}
@@ -443,7 +443,7 @@ body{
     border:1px solid rgba(200,148,42,.2);
   }
   .pg-dot{width:5px;height:5px;}
-  .pc{padding:22px 20px;height:auto;min-height:100svh;}
+  .pc{padding:24px 20px;height:auto;min-height:unset;}
   .moon{width:45px;height:45px;top:3vh;right:4vw;}
   /* Mobile: fix countdown boxes */
   .cd-row{gap:5px;}
@@ -454,19 +454,20 @@ body{
   .mp-info{max-width:110px;}
   .mp-vol{width:44px;}
   /* Mobile page slide animation */
-  @keyframes slideUp{from{transform:translateY(60px);opacity:0;}to{transform:translateY(0);opacity:1;}}
-  @keyframes slideDown{from{transform:translateY(-60px);opacity:0;}to{transform:translateY(0);opacity:1;}}
+  @keyframes slideUp{from{transform:translateY(40px);opacity:0;}to{transform:translateY(0);opacity:1;}}
+  @keyframes slideDown{from{transform:translateY(-40px);opacity:0;}to{transform:translateY(0);opacity:1;}}
   .mob-slide-up  .pg-r{animation:slideUp  .3s cubic-bezier(.25,.46,.45,.94) both;}
   .mob-slide-down .pg-r{animation:slideDown .3s cubic-bezier(.25,.46,.45,.94) both;}
   /* Wish wall on mobile */
   .wish-list{max-height:200px;}
   /* Mobile full cover */
   .mob-cover-full{
-    min-height:100svh;width:100vw;
+    min-height:unset;width:100%;
     background:linear-gradient(155deg,#130524 0%,#2B0D4A 45%,#1A0836 80%,#0D0218 100%);
     display:flex;flex-direction:column;align-items:center;justify-content:center;
-    text-align:center;padding:48px 28px 80px;
+    text-align:center;padding:40px 24px;
     position:relative;overflow:hidden;
+    border-radius:10px;
   }
 }
 
