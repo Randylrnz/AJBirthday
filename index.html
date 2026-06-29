@@ -1670,8 +1670,8 @@
 
     function pgGodparents() {
       const all = GUESTS.filter(g => g.role === 'Witness');
-      const col1 = all.slice(0, 25);
-      const col2 = all.slice(25);
+      const col1 = all.slice(0, 26);
+      const col2 = all.slice(26);
       const mkCol = (arr, offset) => arr.map((g, i) =>
         `<div style="font-size:.575rem;line-height:1.42;color:var(--text);padding:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">
       <span style="font-size:.5rem;color:var(--muted);font-weight:600;margin-right:3px;">${offset + i + 1}.</span>${esc(g.name)}
@@ -1686,7 +1686,7 @@
 
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:0 8px;flex:1;overflow:hidden;">
       <div style="overflow:hidden;">${mkCol(col1, 0)}</div>
-      <div style="overflow:hidden;">${mkCol(col2, 25)}</div>
+      <div style="overflow:hidden;">${mkCol(col2, 26)}</div>
     </div>
     <div class="pg-num r">4</div>
   </div>`;
